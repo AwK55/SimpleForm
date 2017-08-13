@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <title>Simple form</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="simple-form">
+            <form id="myForm" action="" method="POST">
+                <label class="simple-form__label" for="fio">ФИО</label>
+                <input id="myform__input-fio" class="simple-form__input" type="text" name="fio" placeholder="Иванов Иван Иванович">
+                <br>
+                <label class="simple-form__label" for="email">Email</label>
+                <input id="myform__input-email" class="simple-form__input" type="email" name="email">
+                <br>
+                <label class="simple-form__label" for="phone">Телефон</label>
+                <input id="myform__input-phone" class="simple-form__input" type="phone" name="phone" placeholder="+7(999)000-00-00">
+                <br>
+                <button id="submitButton" class="btn__submit" type="button" onclick="MyForm.submit()">Submit</button>
+            </form>
+            <div id="resultContainer" class="result-container">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="script/jquery-3.2.1.js"></script>
+    <script src="index.js"></script>
+    <script>
+        document.onkeydown = function (e) {
+            e = e || window.event;
+            switch (e.which || e.keyCode) {
+                case 13: 
+                    MyForm.submit();
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

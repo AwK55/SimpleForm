@@ -1,0 +1,122 @@
+body {
+  font-size: 16px;
+  font-family: "Opensans", Arial, Helvetica, sans-serif;
+  line-height: 30px;
+  color: rgb(70, 70, 70);
+  background-color: rgb(240, 240, 240);
+  min-width: 400px;
+}
+input, textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+   padding: 3px 0px 3px 3px; 
+  /* margin: 5px 1px 3px 0px; */
+  border: 1px solid #DDDDDD;
+}
+ 
+input:focus, textarea:focus {
+  box-shadow: 0 0 5px #ffdb4d;
+  /* padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px; */
+  border: 1px solid #ffdb4d;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #C3C3C3;
+  font-size: 14px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #C3C3C3;
+  font-size: 14px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #C3C3C3;
+  font-size: 14px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: pink;
+}
+
+.wrapper {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.simple-form{
+    background-color: rgb(249, 249, 249);
+    max-width: 330px;
+    margin: 200px auto;
+    padding: 20px 30px;
+    border-radius: 5px;
+
+    -webkit-box-shadow: 0px 3px 111px -31px rgba(82,82,82,0.66);
+    -moz-box-shadow: 0px 3px 111px -31px rgba(82,82,82,0.66);
+    box-shadow: 0px 3px 111px -31px rgba(82,82,82,0.66);
+}
+.simple-form__label{
+    display: inline-block;
+    padding-right: 20px;
+    width: 100px;
+    margin: auto;
+    font-weight: bold;
+}
+    
+.simple-form__input{  
+  border-radius: 5px;
+  position: relative;
+  margin: auto 0;
+   margin-bottom: 15px; 
+  
+}
+
+.simple-form__input--error {
+  border: 1px solid red;
+}
+
+.btn__submit{
+  background-color:#ffdb4d;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+  border:2px solid #ebc53b;
+  display:block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+  padding:1px 25px;
+   margin:  10px 0px; 
+	text-decoration:none;
+}
+.btn__submit:hover {
+	background-color:#fad550;
+}
+.btn__submit:active {
+	position:relative;
+	top:1px;
+}
+
+.btn__submit:disabled
+{
+  opacity: 0.65; 
+  cursor: not-allowed;
+  background-color: #B3B3B3;  
+}
+
+.response-container{
+
+}
+.response-container.success{
+  
+}
+.response-container.error{
+  
+}
+.response-container.progress{
+  
+}
