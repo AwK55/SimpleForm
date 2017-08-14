@@ -24,7 +24,7 @@ const MyForm = {
         }
 
         function validateEmail(email) {
-            var re = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(ya.ru|yandex.ru|yandex.ua|yandex.by|yandex.kz|yandex.com)$/;
+            //var re = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(ya.ru|yandex.ru|yandex.ua|yandex.by|yandex.kz|yandex.com)$/;
             var re = /^[a-zA-Z0-9_.+-]+@?(ya.ru|yandex.ru|yandex.ua|yandex.by|yandex.kz|yandex.com)$/;
             return re.test(email);
         }
@@ -32,8 +32,7 @@ const MyForm = {
         function validateName(name) {
             //include all symbols like %#@%^!
             //var re = /^(?:(?:^| )\S+ *){3}$/;
-            //var re = /^\s*([a-zA-Z0-9а-яА-ЯёЁ'-]+\s*){3}$/;
-            var re = /^[a-zA-Z0-9а-яА-ЯёЁ'-]{1,} [a-zA-Z0-9а-яА-ЯёЁ'-]{1,} [a-zA-Z0-9а-яА-ЯёЁ'-]{1,}$/
+            var re = /^[a-zA-Z0-9а-яА-ЯёЁ'-]{1,} [a-zA-Z0-9а-яА-ЯёЁ'-]{1,} [a-zA-Z0-9а-яА-ЯёЁ'-]{1,}$/;
             return re.test(name);
         }
 
@@ -48,7 +47,7 @@ const MyForm = {
                 }, this);
                 return sum;
             }
-            var re = /^\+7\([\d]{2,3}\)[\d]{2,3}-[\d]{2,3}-[\d]{2,3}$/
+            var re = /^\+7\([\d]{3}\)[\d]{3}-[\d]{2}-[\d]{2}$/;
             return re.test(phone) && checkSum(phoneArray) <= 30;
         }
 
@@ -78,7 +77,6 @@ const MyForm = {
         function disableButton() {
             var btn = document.getElementById("submitButton");
             btn.disabled = true;
-            //btn.className += " btn__submit--disabled";
             btn.classList.add("btn__submit--disabled");
         }
 
