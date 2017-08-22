@@ -16,6 +16,8 @@ const MyForm = {
     },
 
     validate() {
+		
+		//should I trim spaces.
         function clearErrorClass() {
             var inputs = document.getElementsByClassName("simple-form__input simple-form__input--error");
             while(inputs.length!=0) {
@@ -73,6 +75,12 @@ const MyForm = {
     },
 
     submit() {
+		
+		function enableButton() {
+            var btn = document.getElementById("submitButton");
+            btn.disabled = false;
+            btn.classList.remove("btn__submit--disabled");
+        }
 
         function disableButton() {
             var btn = document.getElementById("submitButton");
@@ -96,7 +104,11 @@ const MyForm = {
 
                 var resultContainer = document.getElementById("resultContainer");
                 resultContainer.classList.add("error");
-                if (data.reason) {
+				
+				var btn = document.getElementById("submitButton");
+                btn.classList.add("btn__submit--error");
+				
+                if (data&&data.reason) {
                     var p = document.createElement("p");
                     p.textContent = data.reason;
                     resultContainer.appendChild(p);
@@ -106,12 +118,16 @@ const MyForm = {
             function success() {
                 var resultContainer = document.getElementById("resultContainer");
                 resultContainer.classList.add("success");
+				
+				var btn = document.getElementById("submitButton");
+                btn.classList.add("btn__submit--success");
             }
 
             function progress(data) {
                 var resultContainer = document.getElementById("resultContainer");
-                resultContainer.classList.add("progress");
-                if (data.timeout) setTimeout(sendRequenst, parseInt(data.timeout))
+                resultContainer.classList.add("progress");				
+
+                if (data&&data.timeout) setTimeout(sendRequenst, parseInt(data.timeout))
             }
 
             if (!data) return false;
@@ -147,7 +163,10 @@ const MyForm = {
                 data: data,
                 success: function (data) {
                     responseHandler(data);
-                }
+                },
+				error: function () {
+					enableButton();
+				}
             });
         }
 
