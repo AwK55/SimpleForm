@@ -74,7 +74,7 @@ input:focus, textarea:focus {
   
 }
 
-.simple-form__input--error {
+.error {
   border: 1px solid red;
 }
 
