@@ -108,15 +108,12 @@ input:focus, textarea:focus {
   background-color: #B3B3B3;  
 }
 
-.response-container{
-
+.btn__submit--success{
+  border: 2px solid green;
 }
-.response-container.success{
-  
+.btn__submit--error{
+  border: 2px solid red;
 }
-.response-container.error{
-  
-}
-.response-container.progress{
-  
+.btn__submit--progress{
+	
 }
