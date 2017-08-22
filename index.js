@@ -19,7 +19,7 @@ const MyForm = {
 		
 		//should I trim spaces.
         function clearErrorClass() {
-            var inputs = document.getElementsByClassName("simple-form__input simple-form__input--error");
+            var inputs = document.getElementsByClassName("simple-form__input error");
             while(inputs.length!=0) {
                 inputs.item(0).className = "simple-form__input";
             }
@@ -149,7 +149,7 @@ const MyForm = {
             var patternId = "myform__input-";
             for (var i = 0; i < validateResult.errorFields.length; i++) {
                 var field = document.getElementById(patternId + validateResult.errorFields[i]);
-                field.className += " simple-form__input--error"
+                field.classList.add("error");
             }
         }
 
