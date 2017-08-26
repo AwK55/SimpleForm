@@ -17,7 +17,7 @@ const MyForm = {
 
     validate() {
 		
-		//should I trim spaces.
+		//should I trim spaces?
         function clearErrorClass() {
             var inputs = document.getElementsByClassName("simple-form__input error");
             while(inputs.length!=0) {
@@ -117,7 +117,7 @@ const MyForm = {
 
             function success() {
                 var resultContainer = document.getElementById("resultContainer");
-                resultContainer.classList.add("success");
+                resultContainer.className = "success";
 				
 				var btn = document.getElementById("submitButton");
                 btn.classList.add("btn__submit--success");
@@ -125,7 +125,7 @@ const MyForm = {
 
             function progress(data) {
                 var resultContainer = document.getElementById("resultContainer");
-                resultContainer.classList.add("progress");				
+                resultContainer.className= "progress";				
 
                 if (data&&data.timeout) setTimeout(sendRequenst, parseInt(data.timeout))
             }
