@@ -118,6 +118,7 @@ const MyForm = {
             function success() {
                 var resultContainer = document.getElementById("resultContainer");
                 resultContainer.className = "success";
+                resultContainer.textContent = "Success";
 				
 				var btn = document.getElementById("submitButton");
                 btn.classList.add("btn__submit--success");
