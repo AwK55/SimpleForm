@@ -103,9 +103,9 @@ const MyForm = {
             function error(data) {
 
                 var resultContainer = document.getElementById("resultContainer");
-                resultContainer.classList.add("error");
+                resultContainer.className = "error";
 				
-				var btn = document.getElementById("submitButton");
+		var btn = document.getElementById("submitButton");
                 btn.classList.add("btn__submit--error");
 				
                 if (data&&data.reason) {
